@@ -5,7 +5,7 @@ import os
 # Load environment variables from .env
 load_dotenv()
 
-# Init model
+# Init model    X       
 llm = ChatOpenAI()
 
 # Send a test prompt
