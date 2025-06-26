@@ -1,1 +1,7 @@
-{}
+{
+  "graphs": {
+    "default": {
+      "entrypoint": "main.py"
+    }
+  }
+}
