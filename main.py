@@ -1,13 +1,9 @@
+from langgraph.graph import entrypoint
 from langchain_openai import ChatOpenAI
-from dotenv import load_dotenv
-import os
 
-# Load environment variables from .env
-load_dotenv()
-
-# Init model    X       
 llm = ChatOpenAI()
 
-# Send a test prompt
-response = llm.invoke("What's the capital of Sweden?")
-print("Response:", response.content)
+@entrypoint
+def ask_sweden_capital(state: dict) -> dict:
+    response = llm.invoke("What's the capital of Sweden?")
+    return {"answer": response.content}
