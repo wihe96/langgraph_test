@@ -1,7 +1,7 @@
 {
   "graphs": {
     "default": {
-      "entrypoint": "main.py"
+      "entrypoint": "main:build_graph"
     }
   }
 }
