@@ -1,9 +1,17 @@
-from langgraph.graph import entrypoint
-from langchain_openai import ChatOpenAI
-
-llm = ChatOpenAI()
+from langgraph.graph import StateGraph, END
+from langgraph.graph.runner import RunnableGraph
+from langgraph.graph.entrypoint import entrypoint
+from langchain_core.runnables import RunnableLambda
 
 @entrypoint
-def ask_sweden_capital(state: dict) -> dict:
-    response = llm.invoke("What's the capital of Sweden?")
-    return {"answer": response.content}
+def build_graph() -> RunnableGraph:
+    builder = StateGraph(dict)
+
+    def hello_world(state):
+        return {"message": "Hello from LangGraph!"}
+
+    builder.add_node("start", RunnableLambda(hello_world))
+    builder.set_entry_point("start")
+    builder.set_finish_point(END)
+
+    return builder.compile()
