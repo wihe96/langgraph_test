@@ -1,0 +1,14 @@
+{
+  "graphs": {
+    "default": {
+      "type": "graph",
+      "entrypoint": "main:build_graph"
+    }
+  },
+  "dependencies": [
+    "langgraph",
+    "langchain-core"
+  ],
+  "include_deps": false
+}
+

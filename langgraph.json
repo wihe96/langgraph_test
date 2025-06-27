@@ -1,7 +1,0 @@
-{
-  "graphs": {
-    "default": {
-      "entrypoint": "main:build_graph"
-    }
-  }
-}
